@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import { SproutIcon } from "lucide-react";
 import {
   NavigationMenu,
   NavigationMenuItem,
@@ -9,7 +10,8 @@ import {
 import { useIsMobile } from "@/hooks/use-mobile";
 
 const Logo = () => (
-  <Link className="flex items-center" to="/">
+  <Link className="flex items-center gap-3" to="/">
+    <SproutIcon />
     <span className="font-bold text-xl">Afrifoods</span>
   </Link>
 );
@@ -23,11 +25,8 @@ const Navbar = () => {
       <NavigationMenu viewport={isMobile}>
         <NavigationMenuList className="flex-wrap">
           <NavigationMenuItem>
-            <NavigationMenuLink
-              asChild
-              className={navigationMenuTriggerStyle()}
-            >
-              <Link to="/">Home</Link>
+            <NavigationMenuLink asChild>
+              <NavLink title="Home" to="/" />
             </NavigationMenuLink>
           </NavigationMenuItem>
           <NavigationMenuItem>
@@ -35,7 +34,7 @@ const Navbar = () => {
               asChild
               className={navigationMenuTriggerStyle()}
             >
-              <Link to="/about">About</Link>
+              <NavLink title="About" to="/about" />
             </NavigationMenuLink>
           </NavigationMenuItem>
         </NavigationMenuList>
@@ -43,5 +42,22 @@ const Navbar = () => {
     </nav>
   );
 };
+
+type NavLinkProps = {
+  to: string;
+  title?: string;
+};
+
+const NavLink = ({ to, title }: NavLinkProps) => (
+  <Link
+    activeProps={{
+      className: "text-primary font-bold",
+    }}
+    className={navigationMenuTriggerStyle()}
+    to={to}
+  >
+    {title || to}
+  </Link>
+);
 
 export default Navbar;
