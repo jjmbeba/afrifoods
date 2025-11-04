@@ -20,9 +20,9 @@ const Footer = ({
     {
       title: "Services",
       links: [
-        { text: "Business Mentorship", url: "#services" },
-        { text: "Market & Finance Linkage", url: "#services" },
-        { text: "Food Safety Solutions", url: "#services" },
+        { text: "Business Mentorship", url: "/#services" },
+        { text: "Market & Finance Linkage", url: "/#services" },
+        { text: "Food Safety Solutions", url: "/#services" },
       ],
     },
     {
