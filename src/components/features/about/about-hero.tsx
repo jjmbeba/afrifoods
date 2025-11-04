@@ -1,6 +1,5 @@
-import { Link } from "@tanstack/react-router";
 import { Button } from "@/components/ui/button";
-import afrifoodsProfile from "@/constants/resource";
+import { afrifoodsProfile } from "@/constants/resource";
 
 const AboutHero = () => (
   <section className="px-4 py-16 md:px-8 md:py-24">
@@ -28,9 +27,9 @@ const AboutHero = () => (
               </p>
             </div>
             <Button asChild className="mr-auto" variant="outline">
-              <Link target="_blank" to="/about">
-                Learn More
-              </Link>
+              <a href={`mailto:${afrifoodsProfile.contact.email[0] ?? ""}`}>
+                Get in touch
+              </a>
             </Button>
           </div>
           <img
