@@ -1,6 +1,4 @@
-import { TanStackDevtools } from "@tanstack/react-devtools";
 import { createRootRoute, HeadContent, Scripts } from "@tanstack/react-router";
-import { TanStackRouterDevtools } from "@tanstack/react-router-devtools";
 import Footer from "@/components/features/common/footer";
 import Navbar from "@/components/features/common/navbar";
 import appCss from "../styles.css?url";
@@ -64,17 +62,6 @@ function RootDocument({ children }: { children: React.ReactNode }) {
         <Navbar />
         {children}
         <Footer />
-        <TanStackDevtools
-          config={{
-            position: "bottom-right",
-          }}
-          plugins={[
-            {
-              name: "Tanstack Router",
-              render: <TanStackRouterDevtools />,
-            },
-          ]}
-        />
         <Scripts />
       </body>
     </html>
