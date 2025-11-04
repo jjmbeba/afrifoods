@@ -9,19 +9,9 @@ type MenuItem = {
 };
 
 type FooterProps = {
-  logo?: {
-    url: string;
-    src: string;
-    alt: string;
-    title: string;
-  };
   tagline?: string;
   menuItems?: MenuItem[];
   copyright?: string;
-  bottomLinks?: {
-    text: string;
-    url: string;
-  }[];
 };
 
 const Footer = ({
@@ -51,10 +41,6 @@ const Footer = ({
     },
   ],
   copyright = `© ${new Date().getFullYear()} ${afrifoodsProfile.companyName}. All rights reserved.`,
-  bottomLinks = [
-    { text: "Terms and Conditions", url: "#terms" },
-    { text: "Privacy Policy", url: "#privacy" },
-  ],
 }: FooterProps) => (
   <section className="relative px-4 py-32 md:px-8">
     <div className="container">
@@ -119,13 +105,6 @@ const Footer = ({
         </div>
         <div className="mt-24 flex flex-col justify-between gap-4 border-t pt-8 font-medium text-muted-foreground text-sm md:flex-row md:items-center">
           <p>{copyright}</p>
-          <ul className="flex gap-4">
-            {bottomLinks.map((link) => (
-              <li className="underline hover:text-primary" key={link.url}>
-                <a href={link.url}>{link.text}</a>
-              </li>
-            ))}
-          </ul>
         </div>
         <a
           className="-translate-x-1/2 absolute bottom-4 left-1/2 text-muted-foreground text-xs"
