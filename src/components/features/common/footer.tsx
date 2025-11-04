@@ -56,7 +56,7 @@ const Footer = ({
     { text: "Privacy Policy", url: "#privacy" },
   ],
 }: FooterProps) => (
-  <section className="px-4 py-32 md:px-8">
+  <section className="relative px-4 py-32 md:px-8">
     <div className="container">
       <footer>
         <div className="grid grid-cols-2 gap-8 lg:grid-cols-6">
@@ -124,6 +124,15 @@ const Footer = ({
             ))}
           </ul>
         </div>
+        <a
+          className="-translate-x-1/2 absolute bottom-4 left-1/2 text-muted-foreground text-xs"
+          href="https://www.flaticon.com/free-icons/agriculture"
+          rel="noopener"
+          target="_blank"
+          title="agriculture icons"
+        >
+          Agriculture icons created by RanuKumbolo.lab - Flaticon
+        </a>
       </footer>
     </div>
   </section>

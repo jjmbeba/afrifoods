@@ -16,7 +16,18 @@ export const Route = createRootRoute({
         content: "width=device-width, initial-scale=1",
       },
       {
-        title: "TanStack Start Starter",
+        title: "Afrifoods Limited",
+        content:
+          "Afrifoods Limited is a business development company registered under the company acts of Kenya in December 2015.",
+      },
+      {
+        name: "description",
+        content:
+          "Afrifoods Limited is a business development company registered under the company acts of Kenya in December 2015.",
+      },
+      {
+        name: "keywords",
+        content: "Afrifoods Limited, business development, company, Kenya",
       },
     ],
     links: [

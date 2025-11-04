@@ -7,7 +7,16 @@ import Impact from "@/components/features/home/impact";
 import Partners from "@/components/features/home/partners";
 import Services from "@/components/features/home/services";
 
-export const Route = createFileRoute("/")({ component: App });
+export const Route = createFileRoute("/")({
+  component: App,
+  head: () => ({
+    meta: [
+      {
+        title: "Home Page | Afrifoods Limited",
+      },
+    ],
+  }),
+});
 
 function App() {
   return (
