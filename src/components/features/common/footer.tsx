@@ -37,7 +37,7 @@ const Footer = ({
     },
     {
       title: "Company",
-      links: [{ text: "About Us", url: "#about" }],
+      links: [{ text: "About Us", url: "/about" }],
     },
     {
       title: "Contact",
@@ -106,7 +106,10 @@ const Footer = ({
               <h3 className="mb-4 font-bold">{section.title}</h3>
               <ul className="space-y-4 text-muted-foreground">
                 {section.links.map((link) => (
-                  <li className="font-medium hover:text-primary" key={link.url}>
+                  <li
+                    className="font-medium hover:text-primary"
+                    key={`${section.title}-${link.text}`}
+                  >
                     <a href={link.url}>{link.text}</a>
                   </li>
                 ))}

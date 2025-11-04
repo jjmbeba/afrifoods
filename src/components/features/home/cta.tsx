@@ -14,7 +14,7 @@ const CTA = () => (
         <div className="flex flex-col gap-4 sm:flex-row sm:justify-center">
           <a
             className="inline-flex items-center justify-center rounded-md bg-primary-foreground px-8 py-3 font-medium text-primary text-sm transition-colors hover:bg-primary-foreground/90 focus-visible:outline-1 focus-visible:ring-[3px] focus-visible:ring-ring/50"
-            href={`mailto:${afrifoodsProfile.contact.email[0]}`}
+            href={`mailto:${afrifoodsProfile.contact.email?.[0] ?? ""}`}
           >
             Email Us
           </a>
@@ -28,7 +28,7 @@ const CTA = () => (
         <div className="mt-8 space-y-2 text-primary-foreground/90 text-sm">
           <p>
             <span className="font-medium">Email:</span>{" "}
-            {afrifoodsProfile.contact.email[0]}
+            {afrifoodsProfile.contact.email[0]} ?? 'N/A'
           </p>
           <p>
             <span className="font-medium">Phone:</span>{" "}
