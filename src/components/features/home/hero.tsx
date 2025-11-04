@@ -61,7 +61,13 @@ const Hero = () => (
             </Button>
           </div>
         </div>
-        <div className="h-96 w-full rounded-md bg-muted-foreground object-cover" />
+        <img
+          alt="Afrifoods Limited"
+          className="max-h-96 w-full rounded-md bg-muted-foreground object-cover"
+          height={500}
+          src="/hero.webp"
+          width={500}
+        />
       </div>
     </div>
   </section>
