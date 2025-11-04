@@ -1,39 +1,45 @@
-import { Building2, Calendar, MapPin } from "lucide-react";
-import { Badge } from "@/components/ui/badge";
-import { afrifoodsProfile } from "@/constants/resource";
+import { Link } from "@tanstack/react-router";
+import { Button } from "@/components/ui/button";
+import afrifoodsProfile from "@/constants/resource";
 
 const AboutHero = () => (
   <section className="px-4 py-16 md:px-8 md:py-24">
-    <div className="container mx-auto">
-      <div className="mx-auto max-w-4xl">
-        <div className="mb-8 text-center">
-          <Badge className="mb-4" variant="outline">
-            <Building2 className="mr-2 size-4" />
-            {afrifoodsProfile.registration.type}
-          </Badge>
-          <h1 className="mb-6 font-bold text-4xl md:text-5xl">
-            {afrifoodsProfile.companyName}
-          </h1>
-          <div className="flex flex-wrap items-center justify-center gap-4 text-muted-foreground">
-            <div className="flex items-center gap-2">
-              <MapPin className="size-4" />
-              <span>{afrifoodsProfile.registration.location}</span>
+    <div className="container">
+      <div className="mb-14 grid gap-5 text-center md:grid-cols-2 md:text-left">
+        <h1 className="font-semibold text-5xl">About Us</h1>
+        <p className="max-w-xl text-left text-muted-foreground">
+          {afrifoodsProfile.about.description}
+        </p>
+      </div>
+      <div className="grid gap-7 lg:grid-cols-3">
+        <img
+          alt="About Us"
+          className="size-full max-h-[620px] rounded-xl object-cover lg:col-span-2"
+          height={620}
+          src="/about-hero.webp"
+          width={1000}
+        />
+        <div className="flex flex-col gap-7 md:flex-row lg:flex-col">
+          <div className="flex flex-col justify-between gap-6 rounded-xl bg-muted p-7 md:w-1/2 lg:w-auto">
+            <div>
+              <p className="mb-2 font-semibold text-lg">Afrifoods Limited</p>
+              <p className="text-muted-foreground">
+                {afrifoodsProfile.about.description}
+              </p>
             </div>
-            <div className="flex items-center gap-2">
-              <Calendar className="size-4" />
-              <span>{afrifoodsProfile.registration.date}</span>
-            </div>
+            <Button asChild className="mr-auto" variant="outline">
+              <Link target="_blank" to="/about">
+                Learn More
+              </Link>
+            </Button>
           </div>
-        </div>
-        <div className="space-y-6 text-muted-foreground">
-          <p className="text-lg leading-relaxed">
-            {afrifoodsProfile.about.description}
-          </p>
-          <p className="leading-relaxed">{afrifoodsProfile.about.structure}</p>
-          <p className="leading-relaxed">{afrifoodsProfile.about.coreFocus}</p>
-          <p className="leading-relaxed">
-            {afrifoodsProfile.about.specificInterventions}
-          </p>
+          <img
+            alt="About Us"
+            className="grow basis-0 rounded-xl object-cover md:w-1/2 lg:min-h-0 lg:w-auto"
+            height={620}
+            src="/hero.webp"
+            width={1000}
+          />
         </div>
       </div>
     </div>
